@@ -6,7 +6,7 @@ const BoardCard = ({ board }) => {
   const backgroundColor = board.prefs?.backgroundColor || "#ffffff";
 
   return (
-    <Card
+    <Card 
       sx={{
         width: "100%",
         height: 140,

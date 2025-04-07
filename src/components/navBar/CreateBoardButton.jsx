@@ -61,7 +61,7 @@ const CreateBoardButton = ({ onBoardCreated }) => {
   return (
     <>
       <Button variant="contained" color="secondary" onClick={handleOpenMenu}>
-        Create
+        Create Board
       </Button>
 
       <Menu

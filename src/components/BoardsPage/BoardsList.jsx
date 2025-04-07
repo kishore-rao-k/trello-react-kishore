@@ -1,8 +1,27 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, CircularProgress } from "@mui/material";
 import BoardCard from "./BoardCard";
+import { useNavigate } from "react-router-dom";
 
-const BoardsList = ({ boards }) => {
+const BoardsList = ({ boards, loading, error }) => {
+  const navigate = useNavigate();
+
+  if (loading) {
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center", p: 4 }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Typography color="error" sx={{ textAlign: "center", mt: 4 }}>
+        Error: {error}
+      </Typography>
+    );
+  }
+
   return (
     <Box
       sx={{
@@ -18,7 +37,7 @@ const BoardsList = ({ boards }) => {
     >
       {boards.length > 0 ? (
         boards.map((board) => (
-          <Box key={board.id}>
+          <Box key={board.id} onClick={() => navigate(`/boards/${board.id}`)} sx={{ cursor: "pointer" }}>
             <BoardCard board={board} />
           </Box>
         ))

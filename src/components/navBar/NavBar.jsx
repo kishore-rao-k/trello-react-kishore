@@ -61,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
           </IconButton>
           
           <CreateBoardButton onBoardCreated={onBoardCreated} />
-
+          
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
             Trello
           </Typography>
